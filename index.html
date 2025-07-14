@@ -134,6 +134,101 @@
             left: 0; /* Move to the left edge */
             transform: translateX(0); /* Remove center transform */
         }
+
+        /* Modal styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            max-width: 800px;
+            max-height: 90vh; /* Limit height to prevent overflow */
+            overflow-y: auto; /* Enable scrolling for long content */
+            position: relative;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .modal-close-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #4A5568; /* Gray-700 */
+        }
+
+        /* Basic markdown styling within the modal */
+        .modal-body h1 {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700; /* font-bold */
+            margin-bottom: 1rem;
+            color: #1A202C; /* gray-900 */
+        }
+        .modal-body h2 {
+            font-size: 1.75rem; /* text-3xl */
+            font-weight: 600; /* font-semibold */
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #2D3748; /* gray-800 */
+        }
+        .modal-body h3 {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 600; /* font-semibold */
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #2D3748; /* gray-800 */
+        }
+        .modal-body p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: #4A5568; /* gray-700 */
+        }
+        .modal-body ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: #4A5568; /* gray-700 */
+        }
+        .modal-body ul li {
+            margin-bottom: 0.5rem;
+        }
+        .modal-body strong {
+            font-weight: 700;
+            color: #1A202C; /* gray-900 */
+        }
+        .modal-body a {
+            color: #6B46C1; /* purple-600 */
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -601,51 +696,11 @@
                     Thoughts, insights, and explorations in physics and beyond.
                 </p>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-animation">
-                    <!-- Blog Post 1 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden animate-scale-in" style="--delay: 0.2s;">
-                        <!-- Blog Image (Optional, can be a solid color or icon) -->
-                        <div class="bg-gray-200 h-48 flex items-center justify-center text-gray-500 text-6xl">
-                            <!-- Placeholder for blog image or icon -->
-                        </div>
-                        <div class="p-6">
-                            <p class="text-purple-600 text-sm mb-2">April 15, 2025</p>
-                            <h3 class="text-xl font-semibold text-gray-900">Understanding Plasma Physics: A Beginner's Guide</h3>
-                            <p class="text-gray-700 mt-2 text-sm">An introduction to the fascinating world of plasma physics and its applications in modern technology.</p>
-                            <a href="https://placehold.co/100x100/A78BFA/ffffff?text=Blog1" target="_blank" class="text-purple-600 hover:underline text-sm mt-4 inline-block">Read More &rarr;</a>
-                        </div>
-                    </div>
-
-                    <!-- Blog Post 2 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden animate-scale-in" style="--delay: 0.3s;">
-                        <!-- Blog Image (Optional) -->
-                        <div class="bg-gray-200 h-48 flex items-center justify-center text-gray-500 text-6xl">
-                            <!-- Placeholder for blog image or icon -->
-                        </div>
-                        <div class="p-6">
-                            <p class="text-purple-600 text-sm mb-2">March 28, 2025</p>
-                            <h3 class="text-xl font-semibold text-gray-900">Quantum Computing: Principles and Promises</h3>
-                            <p class="text-gray-700 mt-2 text-sm">Exploring the fundamentals of quantum computing and its potential to revolutionize computation.</p>
-                            <a href="https://placehold.co/100x100/A78BFA/ffffff?text=Blog2" target="_blank" class="text-purple-600 hover:underline text-sm mt-4 inline-block">Read More &rarr;</a>
-                        </div>
-                    </div>
-
-                    <!-- Blog Post 3 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden animate-scale-in" style="--delay: 0.4s;">
-                        <!-- Blog Image (Optional, can be a solid color or icon) -->
-                        <div class="bg-purple-600 h-48 flex items-center justify-center text-white text-6xl">
-                            <i class="fas fa-satellite"></i> <!-- Example icon -->
-                        </div>
-                        <div class="p-6">
-                            <p class="text-purple-600 text-sm mb-2">February 10, 2025</p>
-                            <h3 class="text-xl font-semibold text-gray-900">The CubeSat Revolution: Small Satellites, Big Impact</h3>
-                            <p class="text-gray-700 mt-2 text-sm">How miniature satellites are changing space exploration and creating new opportunities in science.</p>
-                            <a href="https://placehold.co/100x100/A78BFA/ffffff?text=Blog3" target="_blank" class="text-purple-600 hover:underline text-sm mt-4 inline-block">Read More &rarr;</a>
-                        </div>
-                    </div>
+                <div id="blog-posts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-animation">
+                    <!-- Blog posts will be dynamically inserted here by JavaScript -->
                 </div>
 
-                <div class="text-center mt-12 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 animate-on-scroll" style="--delay: 0.5s;">
+                <div class="text-center mt-12 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 animate-on-scroll" style="--delay: 0.6s;">
                     <button class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300">
                         View All Posts
                     </button>
@@ -742,6 +797,18 @@
 
     </main>
 
+    <!-- Blog Post Modal Structure -->
+    <div id="blog-modal-overlay" class="modal-overlay"> <!-- Removed 'hidden' class here -->
+        <div class="modal-content">
+            <button id="close-blog-modal" class="modal-close-button">&times;</button>
+            <h2 id="modal-blog-title" class="text-3xl font-bold text-gray-900 mb-4"></h2>
+            <p id="modal-blog-date" class="text-purple-600 text-sm mb-4"></p>
+            <div id="modal-blog-body" class="modal-body text-gray-700 leading-relaxed">
+                <!-- Blog content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 py-12">
         <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 animate-on-scroll" style="--delay: 0.1s;">
@@ -826,6 +893,10 @@
         const contactForm = document.getElementById('contact-form');
         const formMessage = document.getElementById('form-message');
 
+        // Set the Formspree endpoint directly on the form in JS
+        contactForm.action = "https://formspree.io/f/xzzvpyad";
+        contactForm.method = "POST";
+
         contactForm.addEventListener('submit', async function(event) {
             event.preventDefault(); // Prevent default form submission
 
@@ -888,7 +959,7 @@
 
             if (isValid) {
                 try {
-                    const response = await fetch(event.target.action, {
+                    const response = await fetch(contactForm.action, { // Use contactForm.action here
                         method: 'POST',
                         body: formData,
                         headers: {
@@ -1080,6 +1151,7 @@
         window.onload = function () {
             initThreeJS();
             animate();
+            renderBlogPosts(); // Render blog posts after the page loads
         };
 
         // Scroll animation logic
@@ -1119,6 +1191,250 @@
             observer.observe(element);
         });
 
+        // Blog Post Data
+        const blogPosts = [
+            {
+                id: 'rainbow-formation',
+                title: 'Understanding Rainbows: A Symphony of Light and Water',
+                date: 'July 14, 2025',
+                summary: 'Explore the physics behind one of nature\'s most beautiful optical phenomena, from total internal reflection to dispersion.',
+                iconClass: 'fas fa-rainbow',
+                bgColorClass: 'bg-purple-200',
+                textColorClass: 'text-purple-600',
+                content: `
+# Understanding Rainbows: A Symphony of Light and Water
+
+Rainbows, those ephemeral arcs of color that grace our skies, are one of nature's most breathtaking optical phenomena. Far from being simple curiosities, their formation involves a fascinating interplay of light, water, and fundamental principles of physics.
+
+## Why are Rainbows Formed? The Dance of Reflection and Dispersion
+
+The magic of a rainbow begins when sunlight encounters tiny water droplets suspended in the atmosphere after rain. Two primary optical phenomena are at play:
+
+1.  **Refraction and Dispersion:** As white sunlight enters a water droplet, it slows down and bends. This bending is called **refraction**. Crucially, white light is composed of different colors, each with a slightly different wavelength. Shorter wavelengths (like violet and blue) bend more, while longer wavelengths (like red) bend less. This separation of white light into its constituent colors is known as **dispersion**. The water droplet acts like a tiny prism, fanning out the colors.
+
+2.  **Total Internal Reflection (TIR):** After entering the droplet and dispersing, the light rays travel to the back inner surface of the droplet. Here, instead of exiting, they undergo **Total Internal Reflection (TIR)**. This occurs because the light is moving from a denser medium (water) to a less dense medium (air) at an angle greater than the critical angle, causing all of the light to be reflected back into the water droplet.
+
+3.  **Second Refraction:** Finally, the dispersed and reflected light rays exit the water droplet, refracting once more as they pass from water back into the air. This second refraction further separates the colors and sends them back towards the observer.
+
+## Why is a Rainbow Circular? Your Perspective Matters
+
+A rainbow isn't just an arc; it's actually a full circle! We only see an arc because the ground blocks the lower half. The circular shape arises because of the specific angles at which different colors of light are reflected and refracted by the water droplets back to your eye.
+
+For any given color, there's a specific angle (relative to the sun's anti-solar point – the point directly opposite the sun) at which the light is most intensely reflected back to you. For the primary rainbow, this angle is approximately $42^\circ$ for red light and $40^\circ$ for violet light. Since all droplets at these specific angles form a circle around the anti-solar point, you perceive a circular arc.
+
+## Why is Red at the Top? The Order of Colors
+
+The order of colors in a primary rainbow (Red, Orange, Yellow, Green, Blue, Indigo, Violet – ROYGBIV) is a direct consequence of dispersion. Red light, having the longest wavelength, bends the least when entering and exiting the water droplet. Violet light, with the shortest wavelength, bends the most. This differential bending means that red light emerges from the droplets at a slightly wider angle (around $42^\circ$) compared to violet light (around $40^\circ$).
+
+When you look at a rainbow, your eye receives red light from droplets higher in the sky (relative to the anti-solar point) and violet light from droplets lower in the sky. This is why red always appears on the outer, top edge of the primary rainbow, and violet on the inner, bottom edge.
+
+## Why Always Two Rainbows? Primary and Secondary Arcs
+
+While the primary rainbow is the most common, you can sometimes see a fainter, secondary rainbow outside the primary one. This happens due to a slightly different process:
+
+* **Primary Rainbow:** Formed by light undergoing **one internal reflection** inside the water droplet.
+* **Secondary Rainbow:** Formed by light undergoing **two internal reflections** inside the water droplet. This extra reflection causes the colors to be reversed (violet on the outside, red on the inside) and the arc to appear fainter because more light is lost with each reflection. It also appears at a larger angle (around $50^\circ-53^\circ$).
+
+## Rayleigh Scattering and Rainbows: Different Phenomena
+
+It's important to distinguish rainbow formation from **Rayleigh scattering**, which explains why the sky is blue and sunsets are red. Rayleigh scattering involves the scattering of light by particles much smaller than the wavelength of light (like air molecules). Shorter wavelengths (blue/violet) are scattered more efficiently, leading to a blue sky. Rainbows, on the other hand, are formed by the refraction and reflection of light by larger particles (water droplets), where the size of the droplet is comparable to or larger than the wavelength of light.
+
+## The Elusive Indigo and Conditions for Visibility
+
+While "Indigo" is part of the ROYGBIV mnemonic, it's often difficult to distinguish clearly with the naked eye. The spectrum of colors is continuous, and the human eye's perception of color blends between blue and violet, making indigo less distinct.
+
+For a rainbow to be visible, several conditions must be met:
+
+* **Sunlight:** Direct sunlight is essential.
+* **Water Droplets:** There must be water droplets in the air (rain, mist, fog, or even spray from a waterfall).
+* **Observer Position:** The observer must be positioned between the sun and the water droplets, with their back to the sun.
+* **Humidity and Luminosity:** Sufficient humidity is needed for water droplets to be present, and adequate sunlight (luminosity) is required for the light to be dispersed and reflected brightly enough to be seen.
+* **Water Droplet Size:** The size of the water droplets significantly affects the rainbow's appearance.
+    * **Large droplets (e.g., raindrops):** Produce bright, vivid rainbows with clearly separated colors.
+    * **Small droplets (e.g., mist or fog):** Produce fainter, sometimes white or pastel-colored "fogbows" with less distinct color separation due to diffraction effects.
+`
+            },
+            {
+                id: 'dark-matter-enigma',
+                title: 'The Enigma of Dark Matter: Unveiling the Universe\'s Hidden Mass',
+                date: 'June 20, 2025',
+                summary: 'Delve into the mysterious substance that gravitationally shapes galaxies and the cosmic web, yet remains invisible to our instruments.',
+                iconClass: 'fas fa-ghost',
+                bgColorClass: 'bg-gray-200',
+                textColorClass: 'text-gray-500',
+                content: `
+# The Enigma of Dark Matter: Unveiling the Universe's Hidden Mass
+
+The universe is a vast and mysterious place, and one of its greatest puzzles is the existence of **dark matter**. Despite its name, dark matter doesn't absorb, reflect, or emit light, making it invisible to our telescopes. Yet, its gravitational influence is undeniable, shaping galaxies and the cosmic web itself.
+
+## The Missing Mass Problem
+
+For decades, astronomers have observed that galaxies rotate much faster than they should if they only contained the visible matter (stars, gas, dust) we can detect. This discrepancy led to the hypothesis of "missing mass." Without an additional, unseen gravitational component, galaxies would simply fly apart.
+
+## Evidence for Dark Matter
+
+The evidence for dark matter is overwhelming, primarily derived from its gravitational effects:
+
+* **Galaxy Rotation Curves:** The most compelling evidence. Stars at the outer edges of galaxies orbit at roughly the same speed as stars closer to the center, implying a halo of invisible mass extending far beyond the visible galaxy.
+* **Gravitational Lensing:** Massive objects, including galaxy clusters, bend the light from background objects. The degree of bending observed is far greater than what can be explained by visible matter alone, indicating the presence of additional mass.
+* **Cosmic Microwave Background (CMB):** The faint afterglow of the Big Bang shows patterns that are consistent with a universe containing a significant amount of dark matter.
+* **Structure Formation:** Simulations of the universe's large-scale structure (galaxies, clusters, superclusters) only match observations if dark matter is included.
+
+## What Could Dark Matter Be?
+
+The true nature of dark matter remains one of the biggest unanswered questions in physics. Leading candidates include:
+
+* **WIMPs (Weakly Interacting Massive Particles):** Hypothetical particles that interact only through gravity and the weak nuclear force. Experiments worldwide are actively searching for WIMPs.
+* **Axions:** Another hypothetical particle, much lighter than WIMPs, proposed to solve a different problem in particle physics but also a dark matter candidate.
+* **MACHOs (Massive Astrophysical Compact Halo Objects):** These were once considered, referring to ordinary matter objects like black holes or brown dwarfs. However, observational searches have largely ruled them out as a significant component of dark matter.
+
+The search for dark matter is at the forefront of modern physics, combining observational astronomy with cutting-edge particle physics experiments. Unlocking its secrets promises to revolutionize our understanding of the universe's composition and evolution.
+`
+            },
+            {
+                id: 'quantum-realm',
+                title: 'The Quantum Realm: Where Reality Gets Weird',
+                date: 'May 5, 2025',
+                summary: 'Explore superposition, entanglement, and the observer effect – concepts that challenge our everyday understanding of reality.',
+                iconClass: 'fas fa-atom',
+                bgColorClass: 'bg-blue-200',
+                textColorClass: 'text-blue-600',
+                content: `
+# The Quantum Realm: Where Reality Gets Weird
+
+Step into the quantum realm, and prepare to have your everyday intuitions challenged. Quantum mechanics, the theory describing the behavior of matter and energy at the atomic and subatomic levels, reveals a world far stranger and more fascinating than classical physics ever imagined.
+
+## Superposition: Being in Two Places at Once
+
+One of the most mind-bending concepts in quantum mechanics is **superposition**. Unlike classical objects, which have a definite state (e.g., a coin is either heads or tails), a quantum particle can exist in multiple states simultaneously until it is measured. An electron, for instance, can be in a superposition of spin-up and spin-down at the same time. It's only when we measure its spin that it "collapses" into one definite state. This is famously illustrated by Schrödinger's Cat thought experiment.
+
+## Entanglement: Spooky Action at a Distance
+
+**Entanglement** is another bizarre quantum phenomenon. When two or more particles become entangled, they become linked in such a way that the state of one instantly influences the state of the others, no matter how far apart they are. If you measure the spin of one entangled electron and find it to be spin-up, you instantly know the other entangled electron's spin is spin-down, even if it's light-years away. Einstein famously called this "spooky action at a distance." Entanglement is the backbone of quantum computing and quantum communication.
+
+## Quantum Tunneling: Walking Through Walls
+
+In the macroscopic world, if you throw a ball at a wall, it bounces off. In the quantum world, however, there's a non-zero probability that the ball (or rather, a quantum particle) could simply **tunnel** through the wall, even if it doesn't have enough energy to go over it. This seemingly impossible feat is a consequence of the wave-like nature of particles. Quantum tunneling is not just theoretical; it's a real phenomenon crucial for processes like nuclear fusion in the sun and the operation of scanning tunneling microscopes.
+
+## The Observer Effect: Reality's Dependence on Measurement
+
+Perhaps the most philosophical aspect of quantum mechanics is the **observer effect**. The act of observing or measuring a quantum system can fundamentally change its state. Before measurement, a particle might exist in a superposition of possibilities. The measurement forces it to "choose" one definite state. This raises profound questions about the nature of reality and whether it exists independently of our observation.
+
+Quantum mechanics is not just a collection of strange ideas; it's an incredibly successful theory that underpins much of modern technology, from lasers and transistors to medical imaging. While it continues to challenge our understanding of reality, it also opens up new frontiers for scientific discovery and technological innovation.
+`
+            },
+            {
+                id: 'exoplanet-search',
+                title: 'The Search for Exoplanets: Are We Alone in the Universe?',
+                date: 'April 1, 2025',
+                summary: 'Discover how astronomers find planets orbiting distant stars and the implications for the search for extraterrestrial life.',
+                iconClass: 'fas fa-globe-europe',
+                bgColorClass: 'bg-green-200',
+                textColorClass: 'text-green-600',
+                content: `
+# The Search for Exoplanets: Are We Alone in the Universe?
+
+For centuries, humanity has gazed at the stars and wondered: are we alone? The past few decades have brought us closer than ever to answering that question, thanks to the revolutionary discovery of **exoplanets** – planets orbiting stars other than our Sun.
+
+## How Do We Find Them? The Detective Work of Astronomy
+
+Finding exoplanets is like searching for a firefly next to a lighthouse. They are tiny and dim compared to their host stars. Astronomers employ ingenious methods to detect them indirectly:
+
+* **Transit Method:** This is the most successful method. When an exoplanet passes directly in front of its star from our perspective, it causes a tiny, temporary dip in the star's brightness. This "transit" allows us to infer the planet's size and orbital period.
+* **Radial Velocity (Doppler Spectroscopy) Method:** A planet's gravity causes its host star to "wobble" slightly. This wobble changes the star's light spectrum, shifting it towards blue when moving towards us and red when moving away (the Doppler effect). This method helps determine the planet's mass.
+* **Direct Imaging:** Extremely challenging, but sometimes possible for very large, young planets far from their stars. Specialized telescopes block out the star's light to reveal the faint planet.
+* **Microlensing:** Based on Einstein's theory of general relativity, a foreground star and its planet can temporarily magnify the light of a background star.
+
+## The Diversity of Worlds
+
+The thousands of exoplanets discovered so far have revealed an astonishing diversity of worlds, far beyond anything imagined from our own solar system:
+
+* **Hot Jupiters:** Gas giants orbiting extremely close to their stars, with scorching temperatures.
+* **Super-Earths:** Planets larger than Earth but smaller than Neptune, some of which might have rocky surfaces.
+* **Mini-Neptunes:** Planets smaller than Neptune but larger than Earth, with thick atmospheres.
+* **Rogue Planets:** Planets that wander through space without orbiting any star.
+
+## The Search for Habitable Worlds
+
+A key focus of exoplanet research is identifying **habitable zones** – regions around a star where temperatures are just right for liquid water to exist on a planet's surface. While liquid water is considered essential for life as we know it, habitability also depends on many other factors, including atmospheric composition, geological activity, and the type of host star.
+
+Future telescopes like the James Webb Space Telescope (JWST) are already beginning to analyze the atmospheres of exoplanets, searching for biosignatures – chemical indicators that might suggest the presence of life. The discovery of exoplanets has transformed our understanding of planetary systems and invigorated the timeless quest to determine if we are indeed alone in the cosmic ocean.
+`
+            }
+        ];
+
+        const blogPostsContainer = document.getElementById('blog-posts-container');
+        const blogModalOverlay = document.getElementById('blog-modal-overlay');
+        const closeBlogModalButton = document.getElementById('close-blog-modal');
+        const modalBlogTitle = document.getElementById('modal-blog-title');
+        const modalBlogDate = document.getElementById('modal-blog-date');
+        const modalBlogBody = document.getElementById('modal-blog-body');
+
+        // Function to render blog posts dynamically
+        function renderBlogPosts() {
+            blogPostsContainer.innerHTML = ''; // Clear existing content
+            blogPosts.forEach((post, index) => {
+                const blogCard = `
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden animate-scale-in" style="--delay: ${0.2 + index * 0.1}s;">
+                        <div class="${post.bgColorClass} h-48 flex items-center justify-center ${post.textColorClass} text-6xl">
+                            <i class="${post.iconClass}"></i>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-purple-600 text-sm mb-2">${post.date}</p>
+                            <h3 class="text-xl font-semibold text-gray-900">${post.title}</h3>
+                            <p class="text-gray-700 mt-2 text-sm">${post.summary}</p>
+                            <a href="javascript:void(0);" class="read-more-link text-purple-600 hover:underline text-sm mt-4 inline-block" data-blog-id="${post.id}">Read More &rarr;</a>
+                        </div>
+                    </div>
+                `;
+                blogPostsContainer.insertAdjacentHTML('beforeend', blogCard);
+            });
+
+            // Add event listeners to the new "Read More" links
+            document.querySelectorAll('.read-more-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    const blogId = this.dataset.blogId;
+                    showBlogPostModal(blogId);
+                });
+            });
+        }
+
+        // Function to show the blog post modal
+        function showBlogPostModal(blogId) {
+            const post = blogPosts.find(p => p.id === blogId);
+            if (post) {
+                modalBlogTitle.textContent = post.title;
+                modalBlogDate.textContent = post.date;
+                // Convert markdown to HTML for display in the modal body
+                modalBlogBody.innerHTML = marked.parse(post.content); // Use marked.js for Markdown parsing
+                blogModalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling background
+            }
+        }
+
+        // Function to hide the blog post modal
+        function hideBlogPostModal() {
+            blogModalOverlay.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+            // Clear modal content after transition for cleaner state
+            setTimeout(() => {
+                modalBlogTitle.textContent = '';
+                modalBlogDate.textContent = '';
+                modalBlogBody.innerHTML = '';
+            }, 300); // Match transition duration
+        }
+
+        // Event listener for closing the modal
+        closeBlogModalButton.addEventListener('click', hideBlogPostModal);
+        blogModalOverlay.addEventListener('click', (event) => {
+            // Close if clicked on overlay, not on modal content
+            if (event.target === blogModalOverlay) {
+                hideBlogPostModal();
+            }
+        });
+
     </script>
+    <!-- Marked.js CDN for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </body>
 </html>
