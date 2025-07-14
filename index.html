@@ -110,6 +110,31 @@
         .stagger-animation > .animate-scale-in {
             transition-delay: var(--delay);
         }
+
+        /* Section Title Underline Effect */
+        .section-title {
+            position: relative;
+            /* Removed display: inline-block; */
+            padding-bottom: 0.5rem; /* Space between text and underline */
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%; /* Start from the center */
+            bottom: 0;
+            width: 0; /* Initially no width */
+            height: 3px; /* Thickness of the underline */
+            background-color: #805AD5; /* Purple color for the underline */
+            transition: width 0.6s ease-out, left 0.6s ease-out; /* Animation for width and position */
+            transform: translateX(-50%); /* Center the underline */
+        }
+
+        .section-title.active::after {
+            width: 100%; /* Expand to full width when active */
+            left: 0; /* Move to the left edge */
+            transform: translateX(0); /* Remove center transform */
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -187,7 +212,7 @@
         <!-- About Me Section -->
         <section id="about" class="py-16 md:py-24 bg-gray-50">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 animate-on-scroll section-title w-fit mx-auto">
                     About <span class="text-purple-600">Me</span>
                 </h2>
                 <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12 animate-on-scroll" style="--delay: 0.1s;">
@@ -278,7 +303,7 @@
         <!-- Research Experience Section -->
         <section id="research" class="py-16 md:py-24 bg-gray-100">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 animate-on-scroll section-title w-fit mx-auto">
                     Research <span class="text-purple-600">Experience</span>
                 </h2>
                 <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12 animate-on-scroll" style="--delay: 0.1s;">
@@ -342,7 +367,7 @@
         <!-- Publications Section -->
         <section id="publications" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 animate-on-scroll section-title w-fit mx-auto">
                     <span class="text-purple-600">Publications</span>
                 </h2>
                 <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12 animate-on-scroll" style="--delay: 0.1s;">
@@ -362,7 +387,10 @@
                             <h3 class="text-xl font-semibold text-gray-900">Study of Micro-Discharges in Dielectric Barrier Discharge: Influence of Electrode Structure and Materials</h3>
                             <p class="text-purple-600 text-sm mt-1">April 2024</p>
                             <p class="text-gray-600 text-sm mt-2">Published in Nepal Journals Online (JSoE)</p>
-                            <p class="text-gray-600 text-sm">DOI: 10.3128/jsce.v...</p>
+                            <!-- Updated DOI link -->
+                            <p class="text-gray-600 text-sm">
+                                <a href="https://doi.org/10.3126/jsce.v12i1.78349" target="_blank" class="text-purple-600 hover:underline">DOI: 10.3126/jsce.v12i1.78349</a>
+                            </p>
                             <p class="text-gray-600 text-sm">Authors: Manish Pandey et al.</p>
                             <a href="https://placehold.co/100x100/A78BFA/ffffff?text=Publication" target="_blank" class="text-purple-600 hover:underline text-sm mt-3 inline-block">Read Publication &rarr;</a>
                         </div>
@@ -375,7 +403,7 @@
         <!-- Projects Section -->
         <section id="projects" class="py-16 md:py-24 bg-gray-100">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 animate-on-scroll section-title w-fit mx-auto">
                     <span class="text-purple-600">Projects</span>
                 </h2>
                 <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12 animate-on-scroll" style="--delay: 0.1s;">
@@ -459,7 +487,7 @@
         <!-- Workshops & Colloquia Section -->
         <section id="workshops" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-900 mb-12 animate-on-scroll section-title w-fit mx-auto">
                     Workshops & <span class="text-purple-600">Colloquia</span>
                 </h2>
                 <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12 animate-on-scroll" style="--delay: 0.1s;">
@@ -469,7 +497,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-animation">
                     <!-- Workshop Card 1: Basics of Quantum ESPRESSO Workshop -->
                     <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 animate-scale-in" style="--delay: 0.2s;">
-                        <div class="flex-shrink-0 w-16 h-16 overflow-hidden rounded-lg"> <!-- Added w-16 h-16 and overflow-hidden here -->
+                        <div class="flex-shrink-0 w-16 h-16 overflow-hidden rounded-lg"> <!-- Container for image -->
                             <!-- Updated Workshop Image with w-full h-full and loading="lazy" -->
                             <img src="photos/quantum_espresso_logo.png" alt="Quantum ESPRESSO" class="w-full h-full object-cover" loading="lazy">
                         </div>
@@ -487,7 +515,7 @@
 
                     <!-- Workshop Card 2: Quantum Computing Workshop -->
                     <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 animate-scale-in" style="--delay: 0.3s;">
-                        <div class="flex-shrink-0 w-16 h-16 overflow-hidden rounded-lg"> <!-- Added w-16 h-16 and overflow-hidden here -->
+                        <div class="flex-shrink-0 w-16 h-16 overflow-hidden rounded-lg"> <!-- Container for image -->
                             <!-- Updated Workshop Image with w-full h-full and loading="lazy" -->
                             <img src="photos/quantum_computing.png" alt="Quantum Computing Workshop" class="w-full h-full object-cover" loading="lazy">
                         </div>
@@ -506,7 +534,7 @@
 
                     <!-- Workshop Card 3: UTOKYO/ICG GNSS Training -->
                     <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 animate-scale-in" style="--delay: 0.4s;">
-                        <div class="flex-shrink-0 w-16 h-16 overflow-hidden rounded-lg"> <!-- Added w-16 h-16 and overflow-hidden here -->
+                        <div class="flex-shrink-0 w-16 h-16 overflow-hidden rounded-lg"> <!-- Container for image -->
                             <!-- Updated Workshop Image with w-full h-full and loading="lazy" -->
                             <img src="photos/gnss.png" alt="GNSS Training" class="w-full h-full object-cover" loading="lazy">
                         </div>
@@ -525,7 +553,7 @@
 
                     <!-- Workshop Card 4: CubeSat Training -->
                     <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 animate-scale-in" style="--delay: 0.5s;">
-                        <div class="flex-shrink-0 w-16 h-16 overflow-hidden rounded-lg"> <!-- Added w-16 h-16 and overflow-hidden here -->
+                        <div class="flex-shrink-0 w-16 h-16 overflow-hidden rounded-lg"> <!-- Container for image -->
                             <!-- Updated Workshop Image with w-full h-full and loading="lazy" -->
                             <img src="photos/cube.jpg" alt="CubeSat Training" class="w-full h-full object-cover" loading="lazy">
                         </div>
@@ -544,7 +572,7 @@
 
                     <!-- Workshop Card 5: Workshop on Experimental Plasma Physics -->
                     <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 animate-scale-in" style="--delay: 0.6s;">
-                        <div class="flex-shrink-0 w-16 h-16 overflow-hidden rounded-lg"> <!-- Added w-16 h-16 and overflow-hidden here -->
+                        <div class="flex-shrink-0 w-16 h-16 overflow-hidden rounded-lg"> <!-- Container for image -->
                             <!-- Updated Workshop Image with w-full h-full and loading="lazy" -->
                             <img src="photos/plasma.png" alt="Experimental Plasma Physics" class="w-full h-full object-cover" loading="lazy">
                         </div>
@@ -567,7 +595,7 @@
         <!-- Blog Section -->
         <section id="blog" class="py-16 md:py-24 bg-gray-100">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 animate-on-scroll section-title w-fit mx-auto">
                     From My <span class="text-purple-600">Blog</span>
                 </h2>
                 <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12 animate-on-scroll" style="--delay: 0.1s;">
@@ -629,7 +657,7 @@
         <!-- Contact Section -->
         <section id="contact" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 animate-on-scroll section-title w-fit mx-auto">
                     Get In <span class="text-purple-600">Touch</span>
                 </h2>
                 <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12 animate-on-scroll" style="--delay: 0.1s;">
@@ -682,7 +710,7 @@
                     <!-- Send Me a Message Form -->
                     <div class="md:w-2/3 bg-white p-8 rounded-lg shadow-lg animate-on-scroll" style="--delay: 0.3s;">
                         <h3 class="text-2xl font-semibold text-gray-900 mb-6">Send Me a Message</h3>
-                        <form id="contact-form" class="space-y-6">
+                        <form id="contact-form" action="https://formspree.io/f/xzzvpyad" method="POST" class="space-y-6">
                             <div>
                                 <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Your Name</label>
                                 <input type="text" id="name" name="name" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-600" placeholder="John Doe" minlength="2" required>
@@ -703,6 +731,8 @@
                                 <textarea id="message" name="message" rows="5" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-600" placeholder="I'd like to discuss..." minlength="10" required></textarea>
                                 <p id="message-error" class="text-red-500 text-xs italic mt-1 hidden">Message must be at least 10 characters long.</p>
                             </div>
+                            <!-- Formspree hidden input for redirection after submission -->
+                            <input type="hidden" name="_next" value="https://your-username.github.io/your-repository-name/thanks.html" />
                             <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 w-full">
                                 Send Message
                             </button>
@@ -727,345 +757,336 @@
                 <div class="flex space-x-4 mt-4">
                     <a href="https://github.com/yourprofile" target="_blank" class="text-gray-400 hover:text-white transition duration-300 text-xl">
                         <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-gray-400 hover:text-white transition duration-300 text-xl">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                                <a href="https://twitter.com/yourprofile" target="_blank" class="text-gray-400 hover:text-white transition duration-300 text-xl">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            </div>
-                        </div>
+                    </a>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-gray-400 hover:text-white transition duration-300 text-xl">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://twitter.com/yourprofile" target="_blank" class="text-gray-400 hover:text-white transition duration-300 text-xl">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
 
-                        <div>
-                            <h3 class="text-white font-semibold text-lg mb-4">Quick Links</h3>
-                            <ul class="space-y-2">
-                                <li><a href="#about" class="hover:text-purple-400 transition duration-300">About</a></li>
-                                <li><a href="#research" class="hover:text-purple-400 transition duration-300">Research</a></li>
-                                <li><a href="#publications" class="hover:text-purple-400 transition duration-300">Publications</a></li>
-                                <li><a href="#projects" class="hover:text-purple-400 transition duration-300">Projects</a></li>
-                                <li><a href="#workshops" class="hover:text-purple-400 transition duration-300">Workshops</a></li>
-                            </ul>
-                        </div>
+            <div>
+                <h3 class="text-white font-semibold text-lg mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#about" class="hover:text-purple-400 transition duration-300">About</a></li>
+                    <li><a href="#research" class="hover:text-purple-400 transition duration-300">Research</a></li>
+                    <li><a href="#publications" class="hover:text-purple-400 transition duration-300">Publications</a></li>
+                    <li><a href="#projects" class="hover:text-purple-400 transition duration-300">Projects</a></li>
+                    <li><a href="#workshops" class="hover:text-purple-400 transition duration-300">Workshops</a></li>
+                </ul>
+            </div>
 
-                        <div>
-                            <h3 class="text-white font-semibold text-lg mb-4">Contact</h3>
-                            <ul class="space-y-2">
-                                <li class="flex items-center space-x-2">
-                                    <i class="fas fa-envelope text-purple-400"></i>
-                                    <span>manish.phy.math@gmail.com</span>
-                                </li>
-                                <li class="flex items-center space-x-2">
-                                    <i class="fas fa-phone-alt text-purple-400"></i>
-                                    <span>(+977) 9742400662</span>
-                                </li>
-                                <li class="flex items-center space-x-2">
-                                    <i class="fas fa-map-marker-alt text-purple-400"></i>
-                                    <span>Mahendranagar, Nepal</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-500">
-                        &copy; 2025 Manish Pandey. All Rights Reserved.
-                    </div>
-                </footer>
+            <div>
+                <h3 class="text-white font-semibold text-lg mb-4">Contact</h3>
+                <ul class="space-y-2">
+                    <li class="flex items-center space-x-2">
+                        <i class="fas fa-envelope text-purple-400"></i>
+                        <span>manish.phy.math@gmail.com</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fas fa-phone-alt text-purple-400"></i>
+                        <span>(+977) 9742400662</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fas fa-map-marker-alt text-purple-400"></i>
+                        <span>Mahendranagar, Nepal</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-500">
+            &copy; 2025 Manish Pandey. All Rights Reserved.
+        </div>
+    </footer>
 
-                <script>
-                    // Smooth scrolling for navigation links
-                    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                        anchor.addEventListener('click', function (e) {
-                            e.preventDefault();
-                            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                                behavior: 'smooth'
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Form validation and submission
+        const contactForm = document.getElementById('contact-form');
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const subjectInput = document.getElementById('subject');
+        const messageInput = document.getElementById('message');
+        const nameError = document.getElementById('name-error');
+        const emailError = document.getElementById('email-error');
+        const subjectError = document.getElementById('subject-error');
+        const messageError = document.getElementById('message-error');
+        const formMessage = document.getElementById('form-message');
+
+        contactForm.addEventListener('submit', function(event) {
+            let isValid = true;
+
+            // Name validation
+            if (nameInput.value.length < 2) {
+                nameError.classList.remove('hidden');
+                nameInput.classList.add('border-red-500');
+                isValid = false;
+            } else {
+                nameError.classList.add('hidden');
+                nameInput.classList.remove('border-red-500');
+            }
+
+            // Email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(emailInput.value)) {
+                emailError.classList.remove('hidden');
+                emailInput.classList.add('border-red-500');
+                isValid = false;
+            } else {
+                emailError.classList.add('hidden');
+                emailInput.classList.remove('border-red-500');
+            }
+
+            // Subject validation
+            if (subjectInput.value.length < 3) {
+                subjectError.classList.remove('hidden');
+                subjectInput.classList.add('border-red-500');
+                isValid = false;
+            } else {
+                subjectError.classList.add('hidden');
+                subjectInput.classList.remove('border-red-500');
+            }
+
+            // Message validation
+            if (messageInput.value.length < 10) {
+                messageError.classList.remove('hidden');
+                messageInput.classList.add('border-red-500');
+                isValid = false;
+            } else {
+                messageError.classList.add('hidden');
+                messageInput.classList.remove('border-red-500');
+            }
+
+            if (!isValid) {
+                event.preventDefault(); // Prevent default form submission if validation fails
+                formMessage.classList.remove('hidden', 'text-green-600');
+                formMessage.classList.add('text-red-500');
+                formMessage.textContent = 'Please correct the errors in the form.';
+            } else {
+                // Allow form to submit to Formspree
+                // Formspree will handle the success/redirection.
+                // You can remove the local success message if Formspree's redirect is sufficient.
+                formMessage.classList.add('hidden'); // Hide any previous error message
+            }
+        });
+
+        // Three.js Integration for Hero Section Background
+        let scene, camera, renderer, points, lines, mouseX = 0, mouseY = 0;
+        const pointCount = 150; // Number of dots
+        const connectionDistance = 2; // Max distance for dots to connect
+        const pointPositions = []; // To store the dynamic positions of points
+
+        // Function to initialize Three.js scene
+        function initThreeJS() {
+            const heroSection = document.getElementById('hero');
+            const canvas = document.getElementById('hero-canvas');
+
+            // Scene setup
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0xfafafa); // Light gray background
+
+            // Camera setup
+            camera = new THREE.PerspectiveCamera(75, heroSection.offsetWidth / heroSection.offsetHeight, 0.1, 1000);
+            camera.position.z = 10; // Adjust camera distance for better view of points
+
+            // Renderer setup
+            renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+            renderer.setSize(heroSection.offsetWidth, heroSection.offsetHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+
+            // Lighting (optional, but good for subtle shading if points have volume)
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+            scene.add(ambientLight);
+            const pointLight = new THREE.PointLight(0xffffff, 1);
+            pointLight.position.set(0, 0, 5);
+            scene.add(pointLight);
+
+            // Create points
+            const pointGeometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(pointCount * 3); // x, y, z for each point
+
+            for (let i = 0; i < pointCount; i++) {
+                const x = (Math.random() - 0.5) * 20; // Spread points across a wider area
+                const y = (Math.random() - 0.5) * 20;
+                const z = (Math.random() - 0.5) * 20;
+                positions[i * 3] = x;
+                positions[i * 3 + 1] = y;
+                positions[i * 3 + 2] = z;
+                pointPositions.push(new THREE.Vector3(x, y, z)); // Store as Vector3 for easier manipulation
+            }
+
+            pointGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            const pointMaterial = new THREE.PointsMaterial({
+                color: 0xA78BFA, // Purple dots
+                size: 0.1, // Small dot size
+                sizeAttenuation: true // Dots appear smaller when further away
+            });
+            points = new THREE.Points(pointGeometry, pointMaterial);
+            scene.add(points);
+
+            // Create lines (initially empty, will be updated dynamically)
+            const lineGeometry = new THREE.BufferGeometry();
+            // Max possible lines: pointCount * (pointCount - 1) / 2 * 2 (for both ends of a line) * 3 (x,y,z)
+            // Let's estimate a reasonable max for the buffer to avoid reallocations
+            const maxLines = pointCount * 5; // Each point connects to avg 5 others
+            const linePositions = new Float32Array(maxLines * 2 * 3); // Two points per line * 3 coords
+            lineGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
+            const lineMaterial = new THREE.LineBasicMaterial({
+                color: 0x805AD5, // Slightly darker purple for lines
+                linewidth: 1, // Narrow lines
+                transparent: true,
+                opacity: 0.5
+            });
+            lines = new THREE.LineSegments(lineGeometry, lineMaterial);
+            scene.add(lines);
+
+            // Event listeners
+            document.addEventListener('mousemove', onDocumentMouseMove, false);
+            window.addEventListener('resize', onWindowResize, false);
+        }
+
+        // Mouse movement handler
+        function onDocumentMouseMove(event) {
+            const windowHalfX = window.innerWidth / 2;
+            const windowHalfY = window.innerHeight / 2;
+            mouseX = (event.clientX - windowHalfX) * 0.0005; // Reduce influence
+            mouseY = (event.clientY - windowHalfY) * 0.0005; // Reduce influence
+        }
+
+        // Window resize handler
+        function onWindowResize() {
+            const heroSection = document.getElementById('hero');
+            camera.aspect = heroSection.offsetWidth / heroSection.offsetHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(heroSection.offsetWidth, heroSection.offsetHeight);
+        }
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Update camera position based on mouse
+            camera.position.x += (mouseX - camera.position.x) * 0.05;
+            camera.position.y += (-mouseY - camera.position.y) * 0.05;
+            camera.lookAt(scene.position);
+
+            // Update point positions and rebuild lines
+            const currentPointPositions = points.geometry.attributes.position.array;
+            let lineIndex = 0;
+
+            // Clear previous lines
+            for (let i = 0; i < lines.geometry.attributes.position.array.length; i++) {
+                lines.geometry.attributes.position.array[i] = 0;
+            }
+
+            for (let i = 0; i < pointCount; i++) {
+                // Apply subtle floating motion
+                pointPositions[i].x += Math.sin(Date.now() * 0.0001 + i) * 0.002;
+                pointPositions[i].y += Math.cos(Date.now() * 0.00015 + i) * 0.002;
+                pointPositions[i].z += Math.sin(Date.now() * 0.0002 + i) * 0.002;
+
+                // Apply mouse influence (subtle "drag" effect)
+                const influenceFactor = 0.00005; // Very subtle influence
+                pointPositions[i].x += (mouseX * 5 - pointPositions[i].x) * influenceFactor;
+                pointPositions[i].y += (-mouseY * 5 - pointPositions[i].y) * influenceFactor;
+
+                // Update point's actual position in the buffer
+                currentPointPositions[i * 3] = pointPositions[i].x;
+                currentPointPositions[i * 3 + 1] = pointPositions[i].y;
+                currentPointPositions[i * 3 + 2] = pointPositions[i].z;
+
+                // Connect to nearby points
+                for (let j = i + 1; j < pointCount; j++) {
+                    const dist = pointPositions[i].distanceTo(pointPositions[j]);
+                    if (dist < connectionDistance) {
+                        // Add line segment
+                        if (lineIndex < lines.geometry.attributes.position.array.length - 6) { // Ensure buffer bounds
+                            lines.geometry.attributes.position.array[lineIndex++] = pointPositions[i].x;
+                            lines.geometry.attributes.position.array[lineIndex++] = pointPositions[i].y;
+                            lines.geometry.attributes.position.array[lineIndex++] = pointPositions[i].z;
+
+                            lines.geometry.attributes.position.array[lineIndex++] = pointPositions[j].x;
+                            lines.geometry.attributes.position.array[lineIndex++] = pointPositions[j].y;
+                            lines.geometry.attributes.position.array[lineIndex++] = pointPositions[j].z;
+                        }
+                    }
+                }
+            }
+
+            points.geometry.attributes.position.needsUpdate = true;
+            lines.geometry.attributes.position.needsUpdate = true;
+            lines.geometry.setDrawRange(0, lineIndex); // Only draw the lines that were actually added
+
+            renderer.render(scene, camera);
+        }
+
+        // Initialize Three.js when the window loads
+        window.onload = function () {
+            initThreeJS();
+            animate();
+        };
+
+        // Scroll animation logic
+        const observerOptions = {
+            root: null, // viewport
+            rootMargin: '0px',
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add 'active' class to trigger animation
+                    entry.target.classList.add('active');
+
+                    // If the element has a stagger-animation class, apply delay to children
+                    if (entry.target.classList.contains('stagger-animation')) {
+                        Array.from(entry.target.children).forEach((child, index) => {
+                            if (child.classList.contains('animate-on-scroll') || child.classList.contains('animate-scale-in')) {
+                                child.style.setProperty('--delay', `${index * 0.1}s`); // Stagger by 0.1s
+                                child.classList.add('active');
+                            }
+                            // For nested elements like cards within a grid
+                            Array.from(child.querySelectorAll('.animate-scale-in')).forEach((nestedChild, nestedIndex) => {
+                                nestedChild.style.setProperty('--delay', `${(index * 0.1) + (nestedIndex * 0.05)}s`);
+                                nestedChild.classList.add('active');
                             });
-                            // Close mobile menu if open
-                            const mobileMenu = document.getElementById('mobile-menu');
-                            if (!mobileMenu.classList.contains('hidden')) {
-                                mobileMenu.classList.add('hidden');
-                            }
                         });
-                    });
-
-                    // Mobile menu toggle
-                    const mobileMenuButton = document.getElementById('mobile-menu-button');
-                    const mobileMenu = document.getElementById('mobile-menu');
-
-                    mobileMenuButton.addEventListener('click', () => {
-                        mobileMenu.classList.toggle('hidden');
-                    });
-
-                    // Form validation
-                    const contactForm = document.getElementById('contact-form');
-                    const nameInput = document.getElementById('name');
-                    const emailInput = document.getElementById('email');
-                    const subjectInput = document.getElementById('subject');
-                    const messageInput = document.getElementById('message');
-                    const nameError = document.getElementById('name-error');
-                    const emailError = document.getElementById('email-error');
-                    const subjectError = document.getElementById('subject-error');
-                    const messageError = document.getElementById('message-error');
-                    const formMessage = document.getElementById('form-message');
-
-                    contactForm.addEventListener('submit', function(event) {
-                        event.preventDefault(); // Prevent default form submission
-
-                        let isValid = true;
-
-                        // Name validation
-                        if (nameInput.value.length < 2) {
-                            nameError.classList.remove('hidden');
-                            nameInput.classList.add('border-red-500');
-                            isValid = false;
-                        } else {
-                            nameError.classList.add('hidden');
-                            nameInput.classList.remove('border-red-500');
-                        }
-
-                        // Email validation
-                        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                        if (!emailPattern.test(emailInput.value)) {
-                            emailError.classList.remove('hidden');
-                            emailInput.classList.add('border-red-500');
-                            isValid = false;
-                        } else {
-                            emailError.classList.add('hidden');
-                            emailInput.classList.remove('border-red-500');
-                        }
-
-                        // Subject validation
-                        if (subjectInput.value.length < 3) {
-                            subjectError.classList.remove('hidden');
-                            subjectInput.classList.add('border-red-500');
-                            isValid = false;
-                        } else {
-                            subjectError.classList.add('hidden');
-                            subjectInput.classList.remove('border-red-500');
-                        }
-
-                        // Message validation
-                        if (messageInput.value.length < 10) {
-                            messageError.classList.remove('hidden');
-                            messageInput.classList.add('border-red-500');
-                            isValid = false;
-                        } else {
-                            messageError.classList.add('hidden');
-                            messageInput.classList.remove('border-red-500');
-                        }
-
-                        if (isValid) {
-                            // In a real application, you would send this data to a server
-                            // For demonstration, we'll just show a success message
-                            formMessage.classList.remove('hidden', 'text-red-500');
-                            formMessage.classList.add('text-green-600');
-                            formMessage.textContent = 'Message sent successfully! I will get back to you soon.';
-                            contactForm.reset(); // Clear the form
-                            // Hide message after a few seconds
-                            setTimeout(() => {
-                                formMessage.classList.add('hidden');
-                            }, 5000);
-                        } else {
-                            formMessage.classList.remove('hidden', 'text-green-600');
-                            formMessage.classList.add('text-red-500');
-                            formMessage.textContent = 'Please correct the errors in the form.';
-                        }
-                    });
-
-                    // Three.js Integration for Hero Section Background
-                    let scene, camera, renderer, points, lines, mouseX = 0, mouseY = 0;
-                    const pointCount = 150; // Number of dots
-                    const connectionDistance = 2; // Max distance for dots to connect
-                    const pointPositions = []; // To store the dynamic positions of points
-
-                    // Function to initialize Three.js scene
-                    function initThreeJS() {
-                        const heroSection = document.getElementById('hero');
-                        const canvas = document.getElementById('hero-canvas');
-
-                        // Scene setup
-                        scene = new THREE.Scene();
-                        scene.background = new THREE.Color(0xfafafa); // Light gray background
-
-                        // Camera setup
-                        camera = new THREE.PerspectiveCamera(75, heroSection.offsetWidth / heroSection.offsetHeight, 0.1, 1000);
-                        camera.position.z = 10; // Adjust camera distance for better view of points
-
-                        // Renderer setup
-                        renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
-                        renderer.setSize(heroSection.offsetWidth, heroSection.offsetHeight);
-                        renderer.setPixelRatio(window.devicePixelRatio);
-
-                        // Lighting (optional, but good for subtle shading if points have volume)
-                        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-                        scene.add(ambientLight);
-                        const pointLight = new THREE.PointLight(0xffffff, 1);
-                        pointLight.position.set(0, 0, 5);
-                        scene.add(pointLight);
-
-                        // Create points
-                        const pointGeometry = new THREE.BufferGeometry();
-                        const positions = new Float32Array(pointCount * 3); // x, y, z for each point
-
-                        for (let i = 0; i < pointCount; i++) {
-                            const x = (Math.random() - 0.5) * 20; // Spread points across a wider area
-                            const y = (Math.random() - 0.5) * 20;
-                            const z = (Math.random() - 0.5) * 20;
-                            positions[i * 3] = x;
-                            positions[i * 3 + 1] = y;
-                            positions[i * 3 + 2] = z;
-                            pointPositions.push(new THREE.Vector3(x, y, z)); // Store as Vector3 for easier manipulation
-                        }
-
-                        pointGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-                        const pointMaterial = new THREE.PointsMaterial({
-                            color: 0xA78BFA, // Purple dots
-                            size: 0.1, // Small dot size
-                            sizeAttenuation: true // Dots appear smaller when further away
-                        });
-                        points = new THREE.Points(pointGeometry, pointMaterial);
-                        scene.add(points);
-
-                        // Create lines (initially empty, will be updated dynamically)
-                        const lineGeometry = new THREE.BufferGeometry();
-                        // Max possible lines: pointCount * (pointCount - 1) / 2 * 2 (for both ends of a line) * 3 (x,y,z)
-                        // Let's estimate a reasonable max for the buffer to avoid reallocations
-                        const maxLines = pointCount * 5; // Each point connects to avg 5 others
-                        const linePositions = new Float32Array(maxLines * 2 * 3); // Two points per line * 3 coords
-                        lineGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
-                        const lineMaterial = new THREE.LineBasicMaterial({
-                            color: 0x805AD5, // Slightly darker purple for lines
-                            linewidth: 1, // Narrow lines
-                            transparent: true,
-                            opacity: 0.5
-                        });
-                        lines = new THREE.LineSegments(lineGeometry, lineMaterial);
-                        scene.add(lines);
-
-                        // Event listeners
-                        document.addEventListener('mousemove', onDocumentMouseMove, false);
-                        window.addEventListener('resize', onWindowResize, false);
                     }
+                    observer.unobserve(entry.target); // Stop observing once animated
+                }
+            });
+        }, observerOptions);
 
-                    // Mouse movement handler
-                    function onDocumentMouseMove(event) {
-                        const windowHalfX = window.innerWidth / 2;
-                        const windowHalfY = window.innerHeight / 2;
-                        mouseX = (event.clientX - windowHalfX) * 0.0005; // Reduce influence
-                        mouseY = (event.clientY - windowHalfY) * 0.0005; // Reduce influence
-                    }
+        // Observe all elements with the 'animate-on-scroll' or 'animate-scale-in' class, and section titles
+        document.querySelectorAll('.animate-on-scroll, .animate-scale-in, .stagger-animation, .section-title').forEach(element => {
+            observer.observe(element);
+        });
 
-                    // Window resize handler
-                    function onWindowResize() {
-                        const heroSection = document.getElementById('hero');
-                        camera.aspect = heroSection.offsetWidth / heroSection.offsetHeight;
-                        camera.updateProjectionMatrix();
-                        renderer.setSize(heroSection.offsetWidth, heroSection.offsetHeight);
-                    }
-
-                    // Animation loop
-                    function animate() {
-                        requestAnimationFrame(animate);
-
-                        // Update camera position based on mouse
-                        camera.position.x += (mouseX - camera.position.x) * 0.05;
-                        camera.position.y += (-mouseY - camera.position.y) * 0.05;
-                        camera.lookAt(scene.position);
-
-                        // Update point positions and rebuild lines
-                        const currentPointPositions = points.geometry.attributes.position.array;
-                        let lineIndex = 0;
-
-                        // Clear previous lines
-                        for (let i = 0; i < lines.geometry.attributes.position.array.length; i++) {
-                            lines.geometry.attributes.position.array[i] = 0;
-                        }
-
-                        for (let i = 0; i < pointCount; i++) {
-                            // Apply subtle floating motion
-                            pointPositions[i].x += Math.sin(Date.now() * 0.0001 + i) * 0.002;
-                            pointPositions[i].y += Math.cos(Date.now() * 0.00015 + i) * 0.002;
-                            pointPositions[i].z += Math.sin(Date.now() * 0.0002 + i) * 0.002;
-
-                            // Apply mouse influence (subtle "drag" effect)
-                            const influenceFactor = 0.00005; // Very subtle influence
-                            pointPositions[i].x += (mouseX * 5 - pointPositions[i].x) * influenceFactor;
-                            pointPositions[i].y += (-mouseY * 5 - pointPositions[i].y) * influenceFactor;
-
-                            // Update point's actual position in the buffer
-                            currentPointPositions[i * 3] = pointPositions[i].x;
-                            currentPointPositions[i * 3 + 1] = pointPositions[i].y;
-                            currentPointPositions[i * 3 + 2] = pointPositions[i].z;
-
-                            // Connect to nearby points
-                            for (let j = i + 1; j < pointCount; j++) {
-                                const dist = pointPositions[i].distanceTo(pointPositions[j]);
-                                if (dist < connectionDistance) {
-                                    // Add line segment
-                                    if (lineIndex < lines.geometry.attributes.position.array.length - 6) { // Ensure buffer bounds
-                                        lines.geometry.attributes.position.array[lineIndex++] = pointPositions[i].x;
-                                        lines.geometry.attributes.position.array[lineIndex++] = pointPositions[i].y;
-                                        lines.geometry.attributes.position.array[lineIndex++] = pointPositions[i].z;
-
-                                        lines.geometry.attributes.position.array[lineIndex++] = pointPositions[j].x;
-                                        lines.geometry.attributes.position.array[lineIndex++] = pointPositions[j].y;
-                                        lines.geometry.attributes.position.array[lineIndex++] = pointPositions[j].z;
-                                    }
-                                }
-                            }
-                        }
-
-                        points.geometry.attributes.position.needsUpdate = true;
-                        lines.geometry.attributes.position.needsUpdate = true;
-                        lines.geometry.setDrawRange(0, lineIndex); // Only draw the lines that were actually added
-
-                        renderer.render(scene, camera);
-                    }
-
-                    // Initialize Three.js when the window loads
-                    window.onload = function () {
-                        initThreeJS();
-                        animate();
-                    };
-
-                    // Scroll animation logic
-                    const observerOptions = {
-                        root: null, // viewport
-                        rootMargin: '0px',
-                        threshold: 0.1 // Trigger when 10% of the element is visible
-                    };
-
-                    const observer = new IntersectionObserver((entries, observer) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                // If the element has a stagger-animation class, apply delay to children
-                                if (entry.target.classList.contains('stagger-animation')) {
-                                    Array.from(entry.target.children).forEach((child, index) => {
-                                        if (child.classList.contains('animate-on-scroll') || child.classList.contains('animate-scale-in')) {
-                                            child.style.setProperty('--delay', `${index * 0.1}s`); // Stagger by 0.1s
-                                            child.classList.add('active');
-                                        }
-                                        // For nested elements like cards within a grid
-                                        Array.from(child.querySelectorAll('.animate-scale-in')).forEach((nestedChild, nestedIndex) => {
-                                            nestedChild.style.setProperty('--delay', `${(index * 0.1) + (nestedIndex * 0.05)}s`);
-                                            nestedChild.classList.add('active');
-                                        });
-                                    });
-                                } else {
-                                    // For individual elements
-                                    entry.target.classList.add('active');
-                                }
-                                observer.unobserve(entry.target); // Stop observing once animated
-                            }
-                        });
-                    }, observerOptions);
-
-                    // Observe all elements with the 'animate-on-scroll' or 'animate-scale-in' class
-                    document.querySelectorAll('.animate-on-scroll, .animate-scale-in, .stagger-animation').forEach(element => {
-                        observer.observe(element);
-                    });
-
-                </script>
-            </body>
-            </html>
-
-            
+    </script>
+</body>
+</html>
