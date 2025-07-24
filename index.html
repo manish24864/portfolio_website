@@ -3,7 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manish Pandey - Physics Researcher</title>
+    <title>Manish Pandey - Physics Researcher | Plasma, Quantum, Space Science</title>
+    <meta name="description" content="Manish Pandey is a physics researcher specializing in plasma physics, quantum computing, and space science. Explore his research, publications, projects, and insights.">
+
+    <!-- Schema.org Structured Data for Person -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Manish Pandey",
+      "jobTitle": "Physics Researcher",
+      "url": "https://pandeymanish.info.np/",
+      "image": "https://pandeymanish.info.np/photos/manish.jpg",
+      "sameAs": [
+        "https://github.com/yourprofile",  <!-- Replace with actual GitHub profile -->
+        "https://linkedin.com/in/yourprofile", <!-- Replace with actual LinkedIn profile -->
+        "https://twitter.com/yourprofile",  <!-- Replace with actual Twitter profile -->
+        "https://scholar.google.com/citations?user=YOUR_ID" <!-- Add Google Scholar if available -->
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "St. Xavier's College, Tribhuvan University"
+      },
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Khowpa College of Engineering" <!-- Or current research institution -->
+      }
+    }
+    </script>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome for icons -->
@@ -272,7 +300,7 @@
 
         <!-- Hero Section -->
         <section id="hero" class="bg-white py-16 md:py-24">
-            <canvas id="hero-canvas"></canvas> <!-- Three.js canvas for background -->
+            <canvas id="hero-canvas" aria-hidden="true"></canvas> <!-- Three.js canvas for background -->
             <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
                 <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
                     <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight animate-on-scroll">
@@ -287,14 +315,14 @@
                             Get In Touch
                         </a>
                         <!-- Updated CV link -->
-                        <a href="photos/Manish_Resume.pdf" target="_blank" class="border border-purple-600 text-purple-600 hover:bg-purple-50 hover:text-purple-700 font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300">
+                        <a href="photos/Manish_Resume.pdf" target="_blank" class="border border-purple-600 text-purple-600 hover:bg-purple-50 hover:text-purple-700 font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300" aria-label="Download Manish Pandey's CV">
                             Download CV
                         </a>
                     </div>
                 </div>
                 <div class="md:w-1/2 flex justify-center items-center relative animate-scale-in" style="--delay: 0.4s;">
                     <!-- Updated Profile Image -->
-                    <img src="photos/manish.jpg" alt="Manish Pandey" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-lg relative z-10" loading="lazy">
+                    <img src="photos/manish.jpg" alt="Manish Pandey - Physics Researcher" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-lg relative z-10" loading="lazy">
                     <!-- Abstract background circle -->
                     <div class="absolute inset-0 flex items-center justify-center">
                         <div class="w-72 h-72 md:w-96 md:h-96 rounded-full bg-purple-100 opacity-50 animate-pulse"></div>
@@ -336,28 +364,28 @@
                         <h3 class="text-2xl font-semibold text-gray-800 mb-6">Research Interests</h3>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 animate-scale-in" style="--delay: 0.3s;">
-                                <i class="fas fa-atom text-purple-600 text-2xl mt-1"></i>
+                                <i class="fas fa-atom text-purple-600 text-2xl mt-1" aria-hidden="true"></i>
                                 <div>
                                     <h4 class="text-xl font-medium text-gray-900">Plasma Physics</h4>
                                     <p class="text-gray-600 text-sm">Plasma generation techniques, electrical and optical characterization, and practical applications in various scientific and engineering fields.</p>
                                 </div>
                             </div>
                             <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 animate-scale-in" style="--delay: 0.4s;">
-                                <i class="fas fa-microchip text-purple-600 text-2xl mt-1"></i>
+                                <i class="fas fa-microchip text-purple-600 text-2xl mt-1" aria-hidden="true"></i>
                                 <div>
                                     <h4 class="text-xl font-medium text-gray-900">Quantum Computing</h4>
                                     <p class="text-gray-600 text-sm">Quantum gates, circuits, algorithms, and programming simulations using platforms like Google Colab.</p>
                                 </div>
                             </div>
                             <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 animate-scale-in" style="--delay: 0.5s;">
-                                <i class="fas fa-globe-americas text-purple-600 text-2xl mt-1"></i>
+                                <i class="fas fa-globe-americas text-purple-600 text-2xl mt-1" aria-hidden="true"></i>
                                 <div>
                                     <h4 class="text-xl font-medium text-gray-900">Space Science</h4>
                                     <p class="text-gray-600 text-sm">Satellite systems, GNSS data analysis, geodesic computation, and space-environment interactions.</p>
                                 </div>
                             </div>
                             <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 animate-scale-in" style="--delay: 0.6s;">
-                                <i class="fas fa-brain text-purple-600 text-2xl mt-1"></i>
+                                <i class="fas fa-brain text-purple-600 text-2xl mt-1" aria-hidden="true"></i>
                                 <div>
                                     <h4 class="text-xl font-medium text-gray-900">Theoretical Physics</h4>
                                     <p class="text-gray-600 text-sm">Quantum mechanics, particle physics, special relativity, and cosmology including dark energy and the Higgs Boson.</p>
@@ -372,14 +400,14 @@
                     <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center md:text-left">Technical Skills</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white p-8 rounded-lg shadow-md animate-scale-in" style="--delay: 0.8s;">
                         <div>
-                            <h4 class="text-xl font-medium text-gray-900 mb-4 flex items-center"><i class="fas fa-code text-purple-600 mr-2"></i>Programming</h4>
+                            <h4 class="text-xl font-medium text-gray-900 mb-4 flex items-center"><i class="fas fa-code text-purple-600 mr-2" aria-hidden="true"></i>Programming</h4>
                             <ul class="list-disc list-inside text-gray-700 space-y-2">
                                 <li>Python</li>
                                 <li>R</li>
                             </ul>
                         </div>
                         <div>
-                            <h4 class="text-xl font-medium text-gray-900 mb-4 flex items-center"><i class="fas fa-tools text-purple-600 mr-2"></i>Software & Tools</h4>
+                            <h4 class="text-xl font-medium text-gray-900 mb-4 flex items-center"><i class="fas fa-tools text-purple-600 mr-2" aria-hidden="true"></i>Software & Tools</h4>
                             <ul class="list-disc list-inside text-gray-700 space-y-2">
                                 <li>LaTeX</li>
                                 <li>Matlab</li>
@@ -419,7 +447,7 @@
                         </div>
                         <div class="md:w-1/3 mt-4 md:mt-0 md:ml-8 flex justify-center">
                             <!-- Updated Plasma Physics Image -->
-                            <img src="photos/plasma.png" alt="Plasma Physics" class="rounded-lg object-cover" loading="lazy">
+                            <img src="photos/plasma.png" alt="Plasma Physics Research" class="rounded-lg object-cover" loading="lazy">
                         </div>
                     </div>
 
@@ -435,7 +463,7 @@
                         </div>
                         <div class="md:w-1/3 mt-4 md:mt-0 md:ml-8 flex justify-center">
                             <!-- Updated Quantum Computing Image -->
-                            <img src="photos/quantum_computing.png" alt="Quantum Computing" class="rounded-lg object-cover" loading="lazy">
+                            <img src="photos/quantum_computing.png" alt="Quantum Computing Research" class="rounded-lg object-cover" loading="lazy">
                         </div>
                     </div>
 
@@ -451,7 +479,7 @@
                         </div>
                         <div class="md:w-1/3 mt-4 md:mt-0 md:ml-8 flex justify-center">
                             <!-- Updated GNSS Data Analysis Image -->
-                            <img src="photos/gnss.png" alt="GNSS Data Analysis" class="rounded-lg object-cover" loading="lazy">
+                            <img src="photos/gnss.png" alt="GNSS Data Analysis Workshop" class="rounded-lg object-cover" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -473,7 +501,7 @@
                     <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 animate-scale-in" style="--delay: 0.2s;">
                         <div class="flex-shrink-0">
                             <!-- Placeholder icon for publication (Replace with your icon: publication-icon.png if needed) -->
-                            <div class="w-16 h-16 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500">
+                            <div class="w-16 h-16 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500" aria-hidden="true">
                                 <i class="fas fa-book text-3xl"></i>
                             </div>
                         </div>
@@ -486,7 +514,7 @@
                                 <a href="https://doi.org/10.3126/jsce.v12i1.78349" target="_blank" class="text-purple-600 hover:underline">DOI: 10.3126/jsce.v12i1.78349</a>
                             </p>
                             <p class="text-gray-600 text-sm">Authors: Manish Pandey et al.</p>
-                            <a href="https://placehold.co/100x100/A78BFA/ffffff?text=Publication" target="_blank" class="text-purple-600 hover:underline text-sm mt-3 inline-block">Read Publication &rarr;</a>
+                            <a href="https://placehold.co/100x100/A78BFA/ffffff?text=Publication" target="_blank" class="text-purple-600 hover:underline text-sm mt-3 inline-block" aria-label="Read Publication: Study of Micro-Discharges">Read Publication &rarr;</a>
                         </div>
                     </div>
                     <!-- Add more publication cards as needed -->
@@ -508,7 +536,7 @@
                     <!-- Project Card 1: CubeSat Design -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden animate-scale-in" style="--delay: 0.2s;">
                         <!-- Updated Project Image -->
-                        <img src="photos/cube.jpg" alt="CubeSat Design" class="w-full h-48 object-cover" loading="lazy">
+                        <img src="photos/cube.jpg" alt="CubeSat Design Project" class="w-full h-48 object-cover" loading="lazy">
                         <div class="p-6">
                             <h3 class="text-xl font-semibold text-gray-900">CubeSat Design</h3>
                             <p class="text-purple-600 text-sm mt-1">January 2025 | NAST</p>
@@ -518,14 +546,14 @@
                                 <span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full">Telemetry</span>
                                 <span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full">Engineering</span>
                             </div>
-                            <a href="https://placehold.co/100x100/A78BFA/ffffff?text=Project1" target="_blank" class="text-purple-600 hover:underline text-sm mt-4 inline-block">View Details &rarr;</a>
+                            <a href="https://placehold.co/100x100/A78BFA/ffffff?text=Project1" target="_blank" class="text-purple-600 hover:underline text-sm mt-4 inline-block" aria-label="View Details for CubeSat Design Project">View Details &rarr;</a>
                         </div>
                     </div>
 
                     <!-- Project Card 2: GNSS-Based Traffic Analysis -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden animate-scale-in" style="--delay: 0.3s;">
                         <!-- Updated Project Image -->
-                        <img src="photos/gnss.png" alt="GNSS-Based Traffic Analysis" class="w-full h-48 object-cover" loading="lazy">
+                        <img src="photos/gnss.png" alt="GNSS-Based Traffic Analysis Project" class="w-full h-48 object-cover" loading="lazy">
                         <div class="p-6">
                             <h3 class="text-xl font-semibold text-gray-900">GNSS-Based Traffic Analysis</h3>
                             <p class="text-purple-600 text-sm mt-1">February 2025 | NAST</p>
@@ -535,14 +563,14 @@
                                 <span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full">Data Analysis</span>
                                 <span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full">Python</span>
                             </div>
-                            <a href="https://placehold.co/100x100/A78BFA/ffffff?text=Project2" target="_blank" class="text-purple-600 hover:underline text-sm mt-4 inline-block">View Details &rarr;</a>
+                            <a href="https://placehold.co/100x100/A78BFA/ffffff?text=Project2" target="_blank" class="text-purple-600 hover:underline text-sm mt-4 inline-block" aria-label="View Details for GNSS-Based Traffic Analysis Project">View Details &rarr;</a>
                         </div>
                     </div>
 
                     <!-- Project Card 3: Vayu - NASA Space Apps Challenge -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden animate-scale-in" style="--delay: 0.4s;">
                         <!-- Updated Project Image -->
-                        <img src="photos/vayu.png" alt="Vayu - NASA Space Apps Challenge" class="w-full h-48 object-cover" loading="lazy">
+                        <img src="photos/vayu.png" alt="Vayu - NASA Space Apps Challenge Project" class="w-full h-48 object-cover" loading="lazy">
                         <div class="p-6">
                             <h3 class="text-xl font-semibold text-gray-900">Vayu - NASA Space Apps Challenge</h3>
                             <p class="text-purple-600 text-sm mt-1">October 2024 | NASA & NRCC</p>
@@ -553,14 +581,14 @@
                                 <span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full">Data Visualization</span>
                             </div>
                             <span class="bg-purple-600 text-white text-xs px-3 py-1 rounded-full absolute top-4 right-4">Global Nominee</span>
-                            <a href="https://placehold.co/100x100/A78BFA/ffffff?text=Project3" target="_blank" class="text-purple-600 hover:underline text-sm mt-4 inline-block">View Project &rarr;</a>
+                            <a href="https://placehold.co/100x100/A78BFA/ffffff?text=Project3" target="_blank" class="text-purple-600 hover:underline text-sm mt-4 inline-block" aria-label="View Project: Vayu - NASA Space Apps Challenge">View Project &rarr;</a>
                         </div>
                     </div>
 
                     <!-- Project Card 4: Saumya Quake - NASA Space Apps -->
                     <div class="bg-white rounded-lg shadow-md overflow-hidden animate-scale-in" style="--delay: 0.5s;">
                         <!-- Updated Project Image -->
-                        <img src="photos/saumya.png" alt="Saumya Quake - NASA Space Apps" class="w-full h-48 object-cover" loading="lazy">
+                        <img src="photos/saumya.png" alt="Saumya Quake - NASA Space Apps Project" class="w-full h-48 object-cover" loading="lazy">
                         <div class="p-6">
                             <h3 class="text-xl font-semibold text-gray-900">Saumya Quake - NASA Space Apps</h3>
                             <p class="text-purple-600 text-sm mt-1">October 2023 | NASA & NRCC</p>
@@ -571,7 +599,7 @@
                                 <span class="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full">Seismology</span>
                             </div>
                             <span class="bg-purple-600 text-white text-xs px-3 py-1 rounded-full absolute top-4 right-4">Global Nominee</span>
-                            <a href="https://placehold.co/100x100/A78BFA/ffffff?text=Project4" target="_blank" class="text-purple-600 hover:underline text-sm mt-4 inline-block">View Project &rarr;</a>
+                            <a href="https://placehold.co/100x100/A78BFA/ffffff?text=Project4" target="_blank" class="text-purple-600 hover:underline text-sm mt-4 inline-block" aria-label="View Project: Saumya Quake - NASA Space Apps">View Project &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -593,7 +621,7 @@
                     <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 animate-scale-in" style="--delay: 0.2s;">
                         <div class="flex-shrink-0 w-16 h-16 overflow-hidden rounded-lg"> <!-- Container for image -->
                             <!-- Updated Workshop Image with w-full h-full and loading="lazy" -->
-                            <img src="photos/quantum_espresso_logo.png" alt="Quantum ESPRESSO" class="w-full h-full object-cover" loading="lazy">
+                            <img src="photos/quantum_espresso_logo.png" alt="Quantum ESPRESSO Workshop Logo" class="w-full h-full object-cover" loading="lazy">
                         </div>
                         <div>
                             <h3 class="text-xl font-semibold text-gray-900">Basics of Quantum ESPRESSO Workshop</h3>
@@ -611,7 +639,7 @@
                     <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 animate-scale-in" style="--delay: 0.3s;">
                         <div class="flex-shrink-0 w-16 h-16 overflow-hidden rounded-lg"> <!-- Container for image -->
                             <!-- Updated Workshop Image with w-full h-full and loading="lazy" -->
-                            <img src="photos/quantum_computing.png" alt="Quantum Computing Workshop" class="w-full h-full object-cover" loading="lazy">
+                            <img src="photos/quantum_computing.png" alt="Quantum Computing Workshop Logo" class="w-full h-full object-cover" loading="lazy">
                         </div>
                         <div>
                             <h3 class="text-xl font-semibold text-gray-900">Quantum Computing Workshop</h3>
@@ -630,7 +658,7 @@
                     <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 animate-scale-in" style="--delay: 0.4s;">
                         <div class="flex-shrink-0 w-16 h-16 overflow-hidden rounded-lg"> <!-- Container for image -->
                             <!-- Updated Workshop Image with w-full h-full and loading="lazy" -->
-                            <img src="photos/gnss.png" alt="GNSS Training" class="w-full h-full object-cover" loading="lazy">
+                            <img src="photos/gnss.png" alt="UTOKYO/ICG GNSS Training Logo" class="w-full h-full object-cover" loading="lazy">
                         </div>
                         <div>
                             <h3 class="text-xl font-semibold text-gray-900">UTOKYO/ICG GNSS Training</h3>
@@ -649,7 +677,7 @@
                     <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 animate-scale-in" style="--delay: 0.5s;">
                         <div class="flex-shrink-0 w-16 h-16 overflow-hidden rounded-lg"> <!-- Container for image -->
                             <!-- Updated Workshop Image with w-full h-full and loading="lazy" -->
-                            <img src="photos/cube.jpg" alt="CubeSat Training" class="w-full h-full object-cover" loading="lazy">
+                            <img src="photos/cube.jpg" alt="CubeSat Training Logo" class="w-full h-full object-cover" loading="lazy">
                         </div>
                         <div>
                             <h3 class="text-xl font-semibold text-gray-900">CubeSat Training</h3>
@@ -668,7 +696,7 @@
                     <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4 animate-scale-in" style="--delay: 0.6s;">
                         <div class="flex-shrink-0 w-16 h-16 overflow-hidden rounded-lg"> <!-- Container for image -->
                             <!-- Updated Workshop Image with w-full h-full and loading="lazy" -->
-                            <img src="photos/plasma.png" alt="Experimental Plasma Physics" class="w-full h-full object-cover" loading="lazy">
+                            <img src="photos/plasma.png" alt="Experimental Plasma Physics Workshop Logo" class="w-full h-full object-cover" loading="lazy">
                         </div>
                         <div>
                             <h3 class="text-xl font-semibold text-gray-900">Workshop on Experimental Plasma Physics</h3>
@@ -724,21 +752,21 @@
                         <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
                         <div class="space-y-6">
                             <div class="flex items-center space-x-4">
-                                <i class="fas fa-map-marker-alt text-xl"></i>
+                                <i class="fas fa-map-marker-alt text-xl" aria-hidden="true"></i>
                                 <div>
                                     <p class="font-medium">Location</p>
                                     <p class="text-sm">Mahendranagar, Kanchanpur, Nepal</p>
                                 </div>
                             </div>
                             <div class="flex items-center space-x-4">
-                                <i class="fas fa-envelope text-xl"></i>
+                                <i class="fas fa-envelope text-xl" aria-hidden="true"></i>
                                 <div>
                                     <p class="font-medium">Email</p>
                                     <p class="text-sm">manish.phy.math@gmail.com</p>
                                 </div>
                             </div>
                             <div class="flex items-center space-x-4">
-                                <i class="fas fa-phone-alt text-xl"></i>
+                                <i class="fas fa-phone-alt text-xl" aria-hidden="true"></i>
                                 <div>
                                     <p class="font-medium">Phone</p>
                                     <p class="text-sm">(+977) 9742400662</p>
@@ -748,13 +776,13 @@
                         <div class="mt-8">
                             <h4 class="font-medium mb-4">Connect</h4>
                             <div class="flex space-x-4">
-                                <a href="https://github.com/yourprofile" target="_blank" class="text-white hover:text-gray-200 transition duration-300 text-2xl">
+                                <a href="https://github.com/yourprofile" target="_blank" class="text-white hover:text-gray-200 transition duration-300 text-2xl" aria-label="Manish Pandey's GitHub Profile">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-white hover:text-gray-200 transition duration-300 text-2xl">
+                                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-white hover:text-gray-200 transition duration-300 text-2xl" aria-label="Manish Pandey's LinkedIn Profile">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
-                                <a href="https://twitter.com/yourprofile" target="_blank" class="text-white hover:text-gray-200 transition duration-300 text-2xl">
+                                <a href="https://twitter.com/yourprofile" target="_blank" class="text-white hover:text-gray-200 transition duration-300 text-2xl" aria-label="Manish Pandey's Twitter Profile">
                                     <i class="fab fa-twitter"></i>
                                 </a>
                             </div>
@@ -767,28 +795,28 @@
                         <form id="contact-form" class="space-y-6">
                             <div>
                                 <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Your Name</label>
-                                <input type="text" id="name" name="name" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-600" placeholder="John Doe" minlength="2" required>
+                                <input type="text" id="name" name="name" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-600" placeholder="John Doe" minlength="2" required aria-required="true">
                                 <p id="name-error" class="text-red-500 text-xs italic mt-1 hidden">Name must be at least 2 characters long.</p>
                             </div>
                             <div>
                                 <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
-                                <input type="email" id="email" name="email" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-600" placeholder="john@example.com" required>
+                                <input type="email" id="email" name="email" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-600" placeholder="john@example.com" required aria-required="true">
                                 <p id="email-error" class="text-red-500 text-xs italic mt-1 hidden">Please enter a valid email address.</p>
                             </div>
                             <div>
                                 <label for="subject" class="block text-gray-700 text-sm font-bold mb-2">Subject</label>
-                                <input type="text" id="subject" name="subject" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-600" placeholder="Research Collaboration" minlength="3" required>
+                                <input type="text" id="subject" name="subject" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-600" placeholder="Research Collaboration" minlength="3" required aria-required="true">
                                 <p id="subject-error" class="text-red-500 text-xs italic mt-1 hidden">Subject must be at least 3 characters long.</p>
                             </div>
                             <div>
                                 <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
-                                <textarea id="message" name="message" rows="5" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-600" placeholder="I'd like to discuss..." minlength="10" required></textarea>
+                                <textarea id="message" name="message" rows="5" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-600" placeholder="I'd like to discuss..." minlength="10" required aria-required="true"></textarea>
                                 <p id="message-error" class="text-red-500 text-xs italic mt-1 hidden">Message must be at least 10 characters long.</p>
                             </div>
                             <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 w-full">
                                 Send Message
                             </button>
-                            <div id="form-message" class="mt-4 text-center text-sm font-medium hidden"></div>
+                            <div id="form-message" class="mt-4 text-center text-sm font-medium hidden" role="status" aria-live="polite"></div>
                         </form>
                     </div>
                 </div>
@@ -798,9 +826,9 @@
     </main>
 
     <!-- Blog Post Modal Structure -->
-    <div id="blog-modal-overlay" class="modal-overlay"> <!-- Removed 'hidden' class here -->
+    <div id="blog-modal-overlay" class="modal-overlay">
         <div class="modal-content">
-            <button id="close-blog-modal" class="modal-close-button">&times;</button>
+            <button id="close-blog-modal" class="modal-close-button" aria-label="Close blog post">&times;</button>
             <h2 id="modal-blog-title" class="text-3xl font-bold text-gray-900 mb-4"></h2>
             <p id="modal-blog-date" class="text-purple-600 text-sm mb-4"></p>
             <div id="modal-blog-body" class="modal-body text-gray-700 leading-relaxed">
@@ -819,13 +847,13 @@
                 </a>
                 <p class="text-sm leading-relaxed">Physics researcher specializing in plasma physics, quantum computing, and space science. Passionate about scientific discovery and innovation.</p>
                 <div class="flex space-x-4 mt-4">
-                    <a href="https://github.com/yourprofile" target="_blank" class="text-gray-400 hover:text-white transition duration-300 text-xl">
+                    <a href="https://github.com/yourprofile" target="_blank" class="text-gray-400 hover:text-white transition duration-300 text-xl" aria-label="Manish Pandey's GitHub Profile">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-gray-400 hover:text-white transition duration-300 text-xl">
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-gray-400 hover:text-white transition duration-300 text-xl" aria-label="Manish Pandey's LinkedIn Profile">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://twitter.com/yourprofile" target="_blank" class="text-gray-400 hover:text-white transition duration-300 text-xl">
+                    <a href="https://twitter.com/yourprofile" target="_blank" class="text-gray-400 hover:text-white transition duration-300 text-xl" aria-label="Manish Pandey's Twitter Profile">
                         <i class="fab fa-twitter"></i>
                     </a>
                 </div>
@@ -846,21 +874,21 @@
                 <h3 class="text-white font-semibold text-lg mb-4">Contact</h3>
                 <ul class="space-y-2">
                     <li class="flex items-center space-x-2">
-                        <i class="fas fa-envelope text-purple-400"></i>
+                        <i class="fas fa-envelope text-purple-400" aria-hidden="true"></i>
                         <span>manish.phy.math@gmail.com</span>
                     </li>
                     <li class="flex items-center space-x-2">
-                        <i class="fas fa-phone-alt text-purple-400"></i>
+                        <i class="fas fa-phone-alt text-purple-400" aria-hidden="true"></i>
                         <span>(+977) 9742400662</span>
                     </li>
                     <li class="flex items-center space-x-2">
-                        <i class="fas fa-map-marker-alt text-purple-400"></i>
+                        <i class="fas fa-map-marker-alt text-purple-400" aria-hidden="true"></i>
                         <span>Mahendranagar, Nepal</span>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-500">
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-50">
             &copy; 2025 Manish Pandey. All Rights Reserved.
         </div>
     </footer>
@@ -1377,13 +1405,13 @@ Future telescopes like the James Webb Space Telescope (JWST) are already beginni
                 const blogCard = `
                     <div class="bg-white rounded-lg shadow-md overflow-hidden animate-scale-in" style="--delay: ${0.2 + index * 0.1}s;">
                         <div class="${post.bgColorClass} h-48 flex items-center justify-center ${post.textColorClass} text-6xl">
-                            <i class="${post.iconClass}"></i>
+                            <i class="${post.iconClass}" aria-hidden="true"></i>
                         </div>
                         <div class="p-6">
                             <p class="text-purple-600 text-sm mb-2">${post.date}</p>
                             <h3 class="text-xl font-semibold text-gray-900">${post.title}</h3>
                             <p class="text-gray-700 mt-2 text-sm">${post.summary}</p>
-                            <a href="javascript:void(0);" class="read-more-link text-purple-600 hover:underline text-sm mt-4 inline-block" data-blog-id="${post.id}">Read More &rarr;</a>
+                            <a href="javascript:void(0);" class="read-more-link text-purple-600 hover:underline text-sm mt-4 inline-block" data-blog-id="${post.id}" aria-label="Read more about ${post.title}">Read More &rarr;</a>
                         </div>
                     </div>
                 `;
